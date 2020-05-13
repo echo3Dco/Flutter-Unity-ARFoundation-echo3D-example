@@ -48,8 +48,8 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
 * Open  <your_flutter_project>/android/settings.gradle` and add the following at the end of the file:`include ':unityExport'`
 ## Run
 * Open your `main.dart` file
-* Find and replace the value `<YOUR-PROJECT-KEY>` with your API key 
-* Find and replace the value `<YOUR-ENTRY-ID>` with your model's entry ID
+* Find and replace the value `<YOUR-PROJECT-KEY>` with your API key and uncomment the code line
+* Find and replace the value `<YOUR-ENTRY-ID>` with your model's entry ID and uncomment the code line
 * Save the file and run the project on an andorid phone
 
 ## Learn more
