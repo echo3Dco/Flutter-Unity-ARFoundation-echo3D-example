@@ -45,7 +45,7 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
               }
           }
   ```
-* Open  <your_flutter_project>/android/settings.gradle` and add the following at the end of the file:`include ':unityExport'`
+* Open  `<your_flutter_project>/android/settings.gradle` and add the following at the end of the file:`include ':unityExport'`
 ## Run
 * Open your `main.dart` file
 * Find and replace the value `<YOUR-PROJECT-KEY>` with your API key and uncomment the code line
