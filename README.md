@@ -9,7 +9,7 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
 * Open the sample scence under `echoAR/Examples/sample.unity`.
 * [Set the API key](https://docs.echoar.xyz/unity/using-the-sdk) in the Inspector of the echoAR game object.
 ## Unity project build settings
-**NOTE**: The flutter plugin we use in this example currently has no support for iOS
+**NOTE**: The flutter plugin we use in this example currently has no support for iOS. If you wish to build for iOS you can try using [another 3rd party plugin](https://pub.dev/packages/flutter_unity_widget). The following building instructions are for Android build. The [*Run*](#run) section of this guide is applicable for both iOS and Android
 * Open the Build Settings window by clicking **File > Build Settings...**.
 * Select Android and click Switch Platform.
 * Check **Export Project**
