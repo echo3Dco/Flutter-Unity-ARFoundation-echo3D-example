@@ -9,7 +9,7 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
 * Open the sample scence under `echoAR/Examples/sample.unity`.
 * [Set the API key](https://docs.echoar.xyz/unity/using-the-sdk) in the Inspector of the echoAR game object.
 ## Unity project build settings
-**NOTE**: The flutter plugin we use in this example currently has no support for iOS. If you wish to build for iOS you can try using [another 3rd party plugin](https://pub.dev/packages/flutter_unity_widget). The following building instructions are for Android build. The [*Run*](#run) section of this guide is applicable for both iOS and Android
+#### Android
 * Open the Build Settings window by clicking **File > Build Settings...**.
 * Select Android and click Switch Platform.
 * Check **Export Project**
@@ -22,9 +22,18 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
 * Close the Player Settings window
 * Click **Add Open Scenes**
 * Click **Export** and save as unityExport
+#### iOS
+* Open the Build Settings window by clicking **File > Build Settings...**.
+* Select iOS and click Switch Platform.
+* Click **Add Open Scenes**
+* Click **Export** and save as unityProject
+
+
+
 ## Flutter configuration
 * Import the project dependecies by running `flutter pub get` from your terminal
-* Copy the **unityExport** folder to `<your_flutter_project>/android/unityExport`
+#### Android
+* Copy your **unityExport** folder to `<your_flutter_project>/android/unityExport`
 * Run `flutter pub run flutter_unity:unity_export_transmogrify` in your terminal
 * Open `<your_flutter_project>/android/app/build.gradle` and make sure your project minSdkVersion equals to the one you defined for your Unity Project as Minimum API Level.
 * Open `<your_flutter_project>/android/build.gradle` and, inside `allprojects { repositories {} }`, add the following:
@@ -46,6 +55,40 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
           }
   ```
 * Open  `<your_flutter_project>/android/settings.gradle` and add the following at the end of the file:`include ':unityExport'`
+#### iOS
+* Copy your **UnityProject** folder to `<your_flutter_project>/iOS/UnityProject`
+* Open `<your_flutter_project>/iOS/Runner.xcworkspace` in Xcode
+* Go to **File > Add Files to "Runner"**, and add `<your_flutter_project>/ios/UnityProject/Unity-iPhone.xcodeproj`
+* Select `Unity-iPhone/Data`, and, in the Inspectors pane, set the Target Membership to *UnityFramework*
+* Select `Unity-iPhone`, select PROJECT : Unity-iPhone, and, in the Build Settings tab, configure the following:
+  - Build Options > Enable Bitcode: **No**
+  - Linking > Other Linker Flags: **-Wl,-U,_FlutterUnityPluginOnMessage**
+* Select **Runner**, select **TARGETS : Runner**, and, in the General tab, configure the following:
+  - Frameworks, Libraries, and Embedded Content: **UnityFramework.framework	-> Embed & Sign**
+* Open `Runner/Runner/Info.plist`, and configure the following:
+<table>
+  <thead>
+    <tr>
+      <th>Key
+      </th>
+      <th>Type
+      </th>
+      <th>Value
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>io.flutter.embedded_views_preview
+      </td>
+      <td>Boolean
+      </td>
+      <td>YES
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## Run
 * Open your `main.dart` file
 * Find and replace the value `<YOUR-PROJECT-KEY>` with your API key and uncomment the code line
