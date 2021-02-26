@@ -12,7 +12,7 @@ Make sure you have an echoAR API key. If you don't have one yet, register for FR
 ## Flutter configuration
 * Import the project dependecies by running `flutter pub get` from your terminal
 ## Unity project build settings
-* follow the instructions for the [flutter_unity](https://pub.dev/packages/flutter_unity#-readme-tab-) plugin
+* Follow the instructions for the [flutter_unity](https://pub.dev/packages/flutter_unity#-readme-tab-) plugin
 ## Run
 * Open your `main.dart` file
 * Find and replace the value `<YOUR-PROJECT-KEY>` with your API key and uncomment the code line
