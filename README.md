@@ -1,5 +1,5 @@
 # Unity-Flutter-echo3D-example
-Starter project to build Android apps using Flutter &amp; Unity with echo3D
+Starter project to build Android apps using Flutter &amp; Unity with echo3D.
 ## Register
 Make sure you have an echo3D API key. If you don't have one yet, register for FREE at [echo3D](https://console.echo3D.co/#/auth/register).
 ## Setup
